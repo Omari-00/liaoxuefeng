@@ -1,0 +1,9 @@
+import functools
+int2 = functools.partial(int,base=2)
+print('%s'% int2('100'))
+'''
+python注释：三个单引号/双引号
+'''
+
+max2 = functools.partial(max,9)#函数做一个元素和作为一个参数时不加括号
+print('%s'% max2(1,2,3))#这个9不算**kw，算入*args中
