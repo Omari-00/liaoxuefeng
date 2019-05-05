@@ -1,0 +1,22 @@
+def factorization(x):
+    L = []
+    flag = 1
+    flag2 = 0
+    for n in range(2,x+1):
+        if flag == 1:
+            if x%n == 0:
+                L.append(n)
+                flag = 0
+        else:
+            if x%n == 0:
+                for n2 in range(0,len(L)):
+                    if n%L[n2] == 0:
+                        flag2 = 1
+                if flag2 == 0:
+                    L.append(n)
+                else:
+                    flag2 = 0
+    return L
+x = 11
+L = factorization(x)
+print(L)
