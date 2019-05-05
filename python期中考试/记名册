@@ -1,0 +1,21 @@
+def not_pass(ls,e):
+    count = 0
+    L = []
+    flag = 0
+    for x in range(0,len(ls)):
+        if ls[x][1]<e:
+            for y in range(0,len(L)):
+                if ls[x][0] == L[y][0]:
+                    flag = 1
+            if flag == 1:
+                flag = 0
+            else:
+                count+=1
+                L.append(ls[x])
+    return count
+ls = [('alice',70),('bob',60),('alice',55),('bob',65)]
+e = 70
+print(not_pass(ls,e))
+ls = [('alice',70),('bob',60),('alice',55)]
+e = 60
+print(not_pass(ls,e))
