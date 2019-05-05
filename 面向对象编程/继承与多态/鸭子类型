@@ -1,0 +1,16 @@
+class animal(object):
+    def run(self):
+        print('animal is running...')
+class cat(animal):
+    def run(self):
+        print('cat is running...')
+class dog(animal):
+    def run(self):
+        print('dog is running...')
+def run_twice(animal):
+    animal.run()
+class human(object):
+    def run(self):
+        print('human is running too!')
+peter = human()
+run_twice(peter)
