@@ -1,0 +1,9 @@
+def zip(numberList1,numberList2):
+    l = min(len(numberList1),len(numberList2))
+    L = []
+    if l == 0:
+        return L
+    else:
+        for x in range(0,l):
+            L.append((numberList1[x],numberList2[x]))
+        return L
