@@ -1,0 +1,26 @@
+def lists(numbers):
+    i2 = 0
+    i1 = 0
+    L = []
+    L1 = []
+    num = numbers[0]
+    for i in range(0,len(numbers)):
+        if numbers[i] != num:
+            L.append(L1)
+            L1 = []
+            num = numbers[i]
+            L1.append(numbers[i])
+        elif numbers[i] == num:
+            L1.append(numbers[i])
+        if i == len(numbers)-1:
+            L.append(L1)
+    return L
+numbers = [-3,-1,-1,0,2,2,5]
+print(lists(numbers))       
+numbers = [-5,-4,-3,-2,-1] 
+print(lists(numbers))
+numbers = [0,0,0,0,0,0,0,0,0]
+print(lists(numbers))
+numbers = [-5,-5,-5,-5,-5,5,5,5,5]
+print(lists(numbers))
+            
