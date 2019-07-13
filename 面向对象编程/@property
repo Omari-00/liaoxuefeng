@@ -1,0 +1,37 @@
+#把方法当属性用，就可以在函数里限制输入的值了
+#这样就不用 s.set_width(num)这样做了
+
+class Screen(object):
+    
+    @property
+    def width(self):
+        return self._width
+    
+    @width.setter
+    def width(self,value):
+        if not isinstance(value, int):
+            raise ValueError('score must be an integer!')
+        if value < 0 or value > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self._width = value
+        
+    @property
+    def height(self):
+        return self._height
+    
+    @height.setter
+    def height(self,value):
+        if not isinstance(value, int):
+            raise ValueError('score must be an integer!')
+        if value < 0 or value > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self._height = value
+        
+    @property
+    def resolution(self):
+        return self._width * self._height
+    #resolution不接收参数，只返回，只读属性
+s = Screen()
+s.width = 100
+s.height = 99
+print(s.resolution)
