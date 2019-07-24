@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jul 24 21:18:48 2019
+
+@author: 15
+"""
+
+'''
+f = open('C:\\Users\\15\\Desktop\\t1.txt','r')
+#防止被解读为转义，地址都要加双杠
+print(f.read())
+f.close()
+with open('C:\\Users\\15\\Desktop\\t1.txt','r') as f:
+      print(f.read())
+      #用with as句式后不用写f.close()否则需要写f.close
+'''
+
+'''    
+for line in f.readlines():#readlines()按行读取返回list
+    print(line.strip())
+#   .strip()去掉结尾的\n
+'''
+
+'''
+with open('C:\\Users\\15\\Desktop\\t1.txt','a') as f:
+    f.write('hello world')
+'''    
+#w:写入，但会覆盖原有内容，a，append模式，可以在原有内容上再添加
