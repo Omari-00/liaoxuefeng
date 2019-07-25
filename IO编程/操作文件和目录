@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jul 24 21:49:13 2019
+
+@author: 15
+"""
+
+import os
+'''
+print(os.name,os.uname_result)
+print(os.uname_result)
+print(os.environ)#查看操作系统中定义的环境变量
+print(os.environ.get('PATH'))
+'''
+print(os.path.abspath('.'))#标记当前目录路径
+#os.path.join('C:\Users\15\Desktop\cs\py1','testdir')
+#path.join把两个路径合成一个
+print(os.path.join('C:\\Users\\15\\Desktop\\cs\\py1','testdir'))
+#os.mkdir('C:\\Users\\15\\Desktop\\cs\\py1\\testdir')#在这个路径创建一个名叫testdir的新目录
+#os.rmdir('C:\\Users\\15\\Desktop\\cs\\py1\\testdir')
+#rmdir删掉这个新目录
+print(os.path.splitext('C:\\Users\\15\\Desktop\\cs\\py1\\t1.txt'))
+print(os.path.split('C:\\Users\\15\\Desktop\\cs\\py1\\t1.txt'))
+#os.rename('t1.txt','t1.py')#重命名
+#os.remove('t1.py')#删除这个文件
+print([x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1] == '.py'])
