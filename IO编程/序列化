@@ -1,0 +1,10 @@
+import pickle
+d = dict(name='bob',age=20,score=88)
+f = open('pickle.txt','wb')
+pickle.dump(d,f)#序列化，pickle.dump()直接把对象序列化后写入一个file-like Object
+f.close()
+
+f = open('pickle.txt','rb')
+b = pickle.load(f)#反序列化
+f.close()
+print(b)
