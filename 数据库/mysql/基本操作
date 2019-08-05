@@ -1,0 +1,3 @@
+C:\Users\15\Desktop\mysql-8.0.17-winx64\bin>net start mysql
+C:\Users\15\Desktop\mysql-8.0.17-winx64\bin>net stop mysql
+C:\Users\15\Desktop\mysql-8.0.17-winx64\bin>mysql -u root -p
