@@ -2,3 +2,6 @@ import json
 obj = dict(name = 'stus',age=20)
 s = json.dumps(obj)
 print(s)
+
+
+#参考:https://www.runoob.com/python/python-json.html
