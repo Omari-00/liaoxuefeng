@@ -1,0 +1,36 @@
+from urllib import request
+from http import cookiejar
+
+url = 'https://www.saxstar.club/nogizaka/pc_picIndex.html'
+
+
+print('1')
+
+responce1 = request.urlopen(url)
+print(responce1.getcode())#状态码，如果是200就说明读取成功
+print(len(responce1.read()))#抓取的内容
+
+print('2')
+
+
+#print(request.__file__)
+rqst = request.Request(url)
+rqst.add_header('user-agent','Mozilla/5.0')#不代表这就是一个post请求，只是另一种方法
+responce2 = request.urlopen(rqst)
+print(responce2.getcode())
+#print(dir(responce2))#查看有哪些方法
+print(responce2._method)#查看是用来post还是get
+print(len(responce2.read()))
+
+print('3')
+
+cj = cookiejar.CookieJar()
+handler = request.HTTPCookieProcessor(cj)
+opener = request.build_opener(handler)
+responce3 = request.urlopen(url)
+print(responce3.getcode())
+print(len(responce3.read()))
+print(cj)
+for item in cj:
+    print('name = '+item.name)
+    print('value = '+item.value)
